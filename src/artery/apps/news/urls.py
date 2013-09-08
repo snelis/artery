@@ -1,17 +1,10 @@
-from django.conf.urls import patterns, include, url
+# The views used below are normally mapped in django.contrib.admin.urls.py
+# This URLs file is used to provide a reliable view deployment for test purposes.
+# It is also provided as a convenience to those who want to deploy these URLs
+# elsewhere.
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'artery.views.home', name='home'),
-    # url(r'^artery/', include('artery.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^/$', 'artery.apps.news.views.index', name='news'),
 )

@@ -1,13 +1,10 @@
-{% for username in pillar['users'] %}
-{% set user = pillar['users'].get(username) %}
-{% set username = user.get(username, username) %}
-'{{ username }}':
+{% for username, user in pillar.get('users', {}).items() %}
+{{ username }}:
     user.present:
         {% if 'groups' in user %}
         - groups:
-            {% for group in user.get('groups', []) %}- {{ group }}
-            {% else %}
-            []
+            {% for group in user.groups %}
+            - {{ group }}
             {% endfor %}
         {% endif %}
         {% if 'gid' in user %}

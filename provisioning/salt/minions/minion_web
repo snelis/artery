@@ -3,5 +3,5 @@ file_client: local
 
 grains:
   roles:
-    - db
-    - postgres
+    - web
+    - nginx

@@ -2,7 +2,7 @@ include:
     - python
 
 virtualenv:
-    package.installed:
+    pkg.installed:
         - name: python-virtualenv
         - require:
-            - package: python
+            - pkg: python

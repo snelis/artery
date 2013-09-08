@@ -1,3 +1,5 @@
+{% set version = salt['pillar.get']('postgres:version', '9.1') %}
+
 postgresql:
     package:
         - purged
@@ -5,8 +7,6 @@ postgresql:
             - service: postgresql
     service.dead:
         - enabled: false
-
-{% set version = '9.1' %}
 
 '/etc/postgresql/{{ version }}/':
     file:

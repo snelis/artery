@@ -1,1 +1,5 @@
-__author__ = 'niels'
+BLOCKS = (
+    'article.header',
+    'article.body',
+    'article.footer',
+)
