@@ -1,0 +1,7 @@
+master: localhost
+file_client: local
+
+grains:
+  roles:
+    - db
+    - postgres
